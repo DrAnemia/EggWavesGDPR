@@ -17,6 +17,15 @@ withoutrotation_initial_path <- 'data/scores/without_rotation/'
 rotation_destination_path <- 'images/agnes/with_rotation/'
 withoutrotation_destination_path <- 'images/agnes/without_rotation/'
 
+if (file.exists(rotation_destination_path) == FALSE){
+  dir.create('images')
+  dir.create('images/agnes')
+  dir.create(rotation_destination_path)
+}
+if (file.exists(withoutrotation_destination_path) == FALSE){
+  dir.create(withoutrotation_destination_path)
+}
+
 reference <- read.csv('data/initial_data/Aurora_P300_AV3_Raw Data.csv', header = TRUE, sep=',')
 reference <- reference[-c(1)]
 

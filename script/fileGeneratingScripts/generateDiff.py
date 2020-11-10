@@ -7,9 +7,11 @@ from numpy import diff
 import pandas as pd
 import os
 
-initial_path = 'data/initial_data/'
-destination_path = 'data/derivatives/'
-
+initial_path = '../../data/initial_data/'
+destination_path = '../../data/derivatives/'
+if not os.path.exists(destination_path):
+		os.makedirs(destination_path)
+		
 files = [f for f in os.listdir(initial_path) if  f.endswith(".csv")]
 
 for file in files:

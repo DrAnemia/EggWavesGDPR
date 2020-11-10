@@ -17,6 +17,14 @@ destination_path_with_rotation <- 'data/scores/with_rotation/'
 destination_path_without_rotation <- 'data/scores/without_rotation/'   
 sufix <- "_P300_AV3_Raw Data.csv"
 
+if (file.exists(destination_path_without_rotation) == FALSE){
+  dir.create('data/scores')
+  dir.create(destination_path_without_rotation)
+}
+if (file.exists(destination_path_with_rotation) == FALSE){
+  dir.create(destination_path_with_rotation)
+}
+
 files = list.files(path = initial_path, pattern="*.csv")
 
 # Definición de la base de Fourier

@@ -37,4 +37,6 @@ for file in files:
 	        components.append(float(element.replace(',', '.')))   
 
 	df=pd.DataFrame.from_dict(data)
+	if not os.path.exists('data/initial_data/'):
+		os.makedirs('data/initial_data/')
 	df.to_csv('data/initial_data/'+file.replace('.dat','')+'.csv')
